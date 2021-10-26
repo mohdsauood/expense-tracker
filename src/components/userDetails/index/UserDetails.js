@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import Button from "react-bootstrap/Button";
-import { addCommasToNumber } from "../../../service/addCommasToNumber";
 import { UserDetailCard } from "../userDetailCard/UserDetailCard";
 export const UserDetails = () => {
   const [userName, setUserName] = useState("sam");
@@ -12,10 +11,10 @@ export const UserDetails = () => {
     <>
       <div className={styles.userdetailsDiv}>
         <div className="w-80 h-100 d-flex flex-column justify-content-between ">
-          <h4 className="">
+          <h5 className="mt-3">
             Hi {userName} ! Welcome to new era of expense tracking
-          </h4>
-          <div className={`${styles.cardsRowOneDiv} w-100`}>
+          </h5>
+          <div className={` w-100 mt-2`}>
             <UserDetailCard
               text="Total Balance"
               amount={totalBalance}
@@ -23,20 +22,22 @@ export const UserDetails = () => {
             />
           </div>
           <div
-            className={`${styles.cardsRowTwoDiv} w-100 d-flex justify-content-between align-items-center`}
+            className={`w-100 d-flex justify-content-between align-items-center mt-3`}
           >
-            <UserDetailCard
-              text="Total Income"
-              amount={totalIncome}
-              iconColor="green"
-              center={false}
-            />
-            <UserDetailCard
-              text="Total Expense"
-              amount={totalExpense}
-              iconColor="red"
-              center={false}
-            />
+            <div className="d-flex justify-content-between w-50">
+              <UserDetailCard
+                text="Total Income"
+                amount={totalIncome}
+                iconColor="green"
+                center={false}
+              />
+              <UserDetailCard
+                text="Total Expense"
+                amount={totalExpense}
+                iconColor="red"
+                center={false}
+              />
+            </div>
             <Button className={styles.addTransactionButton}>
               Add Transaction
             </Button>
