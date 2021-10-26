@@ -15,6 +15,7 @@ body {
   --turqoise: #3ab29c;
   --light-beige: #edbc9d;
   --dark-beige: #d26d56;
+  --dark-gray: #3f3f3f;
 }
 #root,
 .html {
@@ -24,4 +25,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* common css for all components */
+.money-card {
+  width: 30%;
+  height: 100%;
+}
+
+.custom-text-gray {
+  color: var(--dark-gray);
 }
