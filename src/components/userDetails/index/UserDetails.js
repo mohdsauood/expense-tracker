@@ -11,9 +11,7 @@ export const UserDetails = () => {
     <>
       <div className={styles.userdetailsDiv}>
         <div className="w-80 h-100 d-flex flex-column justify-content-between ">
-          <h5 className="mt-3">
-            Hi {userName} ! Welcome to new era of expense tracking
-          </h5>
+          <h5 className="mt-3">Hi ! Welcome to new era of expense tracking</h5>
           <div className={` w-100 mt-2`}>
             <UserDetailCard
               text="Total Balance"

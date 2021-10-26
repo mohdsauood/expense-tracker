@@ -1,0 +1,27 @@
+.transactionCard {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  .iconDiv {
+    width: 50px;
+    height: 50px;
+    max-width: 30%;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    svg {
+    }
+  }
+  .detailsDiv {
+    width: 60%;
+    .transactionTag {
+      font-size: 13px;
+      color: rgb(165, 158, 158);
+    }
+    .incomeText {
+      color: red;
+    }
+    .expenseText {
+      color: green;
+    }
+  }
+}
