@@ -16,7 +16,11 @@ export const UserDetails = () => {
             Hi {userName} ! Welcome to new era of expense tracking
           </h4>
           <div className={`${styles.cardsRowOneDiv} w-100`}>
-            <UserDetailCard text="Total Balance" amount={totalBalance} />
+            <UserDetailCard
+              text="Total Balance"
+              amount={totalBalance}
+              center={true}
+            />
           </div>
           <div
             className={`${styles.cardsRowTwoDiv} w-100 d-flex justify-content-between align-items-center`}
@@ -24,12 +28,14 @@ export const UserDetails = () => {
             <UserDetailCard
               text="Total Income"
               amount={totalIncome}
-              icon="green"
+              iconColor="green"
+              center={false}
             />
             <UserDetailCard
               text="Total Expense"
               amount={totalExpense}
-              icon="red"
+              iconColor="red"
+              center={false}
             />
             <Button className={styles.addTransactionButton}>
               Add Transaction
