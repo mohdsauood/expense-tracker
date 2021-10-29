@@ -9,7 +9,8 @@ import Button from "react-bootstrap/Button";
 import { DatePickerField } from "../datepickerField/DatePickerField";
 import { useAccount } from "../../../context/accountContext";
 export const AddTransactionForm = ({ closeModal }) => {
-  const { dispatch } = useAccount();
+  const { state, dispatch } = useAccount();
+  const { balance } = state;
   let schema = yup.object().shape({
     title: yup
       .string()
@@ -130,10 +131,13 @@ export const AddTransactionForm = ({ closeModal }) => {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   isValid={touched.amount && !errors.amount}
-                  isInvalid={touched.amount && errors.amount}
+                  isInvalid={
+                    (touched.amount && errors.amount) ||
+                    (values.type === "expense" && values.amount > balance)
+                  }
                 />
                 <Form.Control.Feedback type="invalid">
-                  {errors.amount}
+                  {errors.amount ? errors.amount : "balance is not sufficient"}
                 </Form.Control.Feedback>
               </div>
             </Form.Group>
@@ -179,7 +183,14 @@ export const AddTransactionForm = ({ closeModal }) => {
             </Form.Group>
           </Row>
           <Row>
-            <Button type="submit" className={styles.addButton}>
+            <Button
+              type="submit"
+              className={styles.addButton}
+              disabled={
+                balance <= 0 ||
+                (values.type === "expense" && values.amount > balance)
+              }
+            >
               Add
             </Button>
           </Row>
