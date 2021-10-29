@@ -7,8 +7,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { DatePickerField } from "../datepickerField/DatePickerField";
-
+import { useAccount } from "../../../context/accountContext";
 export const AddTransactionForm = ({ closeModal }) => {
+  const { state, dispatch } = useAccount();
   let schema = yup.object().shape({
     title: yup
       .string()
@@ -23,13 +24,23 @@ export const AddTransactionForm = ({ closeModal }) => {
       .moreThan(0, "number must be greater than 0"),
     createdOn: yup.date().required(),
   });
-
+  function addTransaction(values) {
+    dispatch({ type: "addTransaction", value: values });
+    const { type, amount } = values;
+    if (type === "income") {
+      dispatch({ type: "incrementIncome", value: amount });
+      dispatch({ type: "incrementBalance", value: amount });
+    } else {
+      dispatch({ type: "incrementExpense", value: amount });
+      dispatch({ type: "decrementBalance", value: amount });
+    }
+    console.log("logging state", state);
+  }
   return (
     <Formik
       validationSchema={schema}
       onSubmit={(values) => {
-        console.log(values);
-        console.log("onSubmit is running");
+        addTransaction(values);
         closeModal();
       }}
       initialValues={{
@@ -173,7 +184,6 @@ export const AddTransactionForm = ({ closeModal }) => {
               Add
             </Button>
           </Row>
-          {JSON.stringify(errors)}
         </Form>
       )}
     </Formik>

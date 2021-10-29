@@ -19,8 +19,8 @@ export const TransactionCard = ({ tag, amount, createdOn, title, type }) => {
               <p
                 className={
                   type === "income"
-                    ? `${styles.incomeText}`
-                    : `${styles.expenseText}`
+                    ? `${styles.expenseText}`
+                    : `${styles.incomeText}`
                 }
               >
                 {getAmountSign(type) + addCommasToNumber(amount) + " AED"}
@@ -31,7 +31,7 @@ export const TransactionCard = ({ tag, amount, createdOn, title, type }) => {
                 {tag}
               </p>
               <p className={`text-capitalize ${styles.transactionTag}`}>
-                {createdOn}
+                {String(createdOn).substring(0, 12)}
               </p>
             </div>
           </div>

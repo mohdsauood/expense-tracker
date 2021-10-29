@@ -1,36 +1,10 @@
 import { TransactionCard } from "../transactionCard/TransactionCard";
 import styles from "./styles.module.scss";
+import { useAccount } from "../../../context/accountContext";
 export const Transactions = () => {
-  const transactions = [
-    {
-      tag: "entertainment",
-      amount: 400,
-      date: "23 oct 2021",
-      title: "etisalat elife ",
-      type: "expense",
-    },
-    {
-      tag: "grocery",
-      amount: 20,
-      date: "23 oct 2021",
-      title: "milk",
-      type: "expense",
-    },
-    {
-      tag: "others",
-      amount: 230,
-      date: "23 oct 2021",
-      title: "freelancing",
-      type: "income",
-    },
-    {
-      tag: "transportation",
-      amount: 41,
-      date: "23 oct 2021",
-      title: "taxi fare ",
-      type: "expense",
-    },
-  ];
+  const { state } = useAccount();
+  const { transactions } = state;
+
   return (
     <>
       <div className={styles.transactionsWrapper}>
@@ -40,7 +14,7 @@ export const Transactions = () => {
             <TransactionCard
               tag={transaction.tag}
               amount={transaction.amount}
-              createdOn={transaction.date}
+              createdOn={transaction.createdOn}
               title={transaction.title}
               type={transaction.type}
               key={transaction.title}

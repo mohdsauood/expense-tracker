@@ -3,11 +3,10 @@ import styles from "./styles.module.scss";
 import Button from "react-bootstrap/Button";
 import { UserDetailCard } from "../userDetailCard/UserDetailCard";
 import { AddTransactionModal } from "../../addTransactionModal/index/AddTransactionModal";
+import { useAccount } from "../../../context/accountContext";
 export const UserDetails = () => {
-  const [userName, setUserName] = useState("sam");
-  const [totalBalance, setTotalBalance] = useState("10003.07");
-  const [totalIncome, setTotalIncome] = useState("14000");
-  const [totalExpense, setTotalExpense] = useState("4003");
+  const { state } = useAccount();
+  const { balance, income, expense } = state;
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
@@ -17,7 +16,7 @@ export const UserDetails = () => {
           <div className={` w-100 mt-2`}>
             <UserDetailCard
               text="Total Balance"
-              amount={totalBalance}
+              amount={balance}
               center={true}
             />
           </div>
@@ -27,13 +26,13 @@ export const UserDetails = () => {
             <div className="d-flex justify-content-between w-50">
               <UserDetailCard
                 text="Total Income"
-                amount={totalIncome}
+                amount={income}
                 iconColor="green"
                 center={false}
               />
               <UserDetailCard
                 text="Total Expense"
-                amount={totalExpense}
+                amount={expense}
                 iconColor="red"
                 center={false}
               />
