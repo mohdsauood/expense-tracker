@@ -1,7 +1,5 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import styles from "./styles.module.scss";
 import { AddTransactionForm } from "../addTransactionForm/AddTransactionForm";
 export const AddTransactionModal = (props) => {
   return (

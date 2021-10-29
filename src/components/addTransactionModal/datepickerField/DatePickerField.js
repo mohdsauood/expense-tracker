@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import { useField } from "formik";
 import "react-datepicker/dist/react-datepicker.css";
 export const DatePickerField = ({ name }) => {
-  const [field, meta, helpers] = useField(name);
+  const [meta, helpers] = useField(name);
   const { value } = meta;
   const { setValue } = helpers;
   return (

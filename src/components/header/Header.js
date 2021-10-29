@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 
 export const Header = () => {
   return (
