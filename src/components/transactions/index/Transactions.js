@@ -40,7 +40,7 @@ export const Transactions = () => {
             <TransactionCard
               tag={transaction.tag}
               amount={transaction.amount}
-              date={transaction.date}
+              createdOn={transaction.date}
               title={transaction.title}
               type={transaction.type}
               key={transaction.title}

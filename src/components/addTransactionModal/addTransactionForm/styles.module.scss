@@ -1,0 +1,35 @@
+.form {
+  font-size: 15px;
+  .formLabel {
+    min-width: 120px;
+    margin-bottom: 0px;
+  }
+
+  .formControl {
+    width: 100%;
+  }
+  .errorText {
+    color: rgb(175, 24, 24);
+  }
+  .expenseRadioLabel {
+    margin-left: 1rem;
+  }
+  //  hiding the arrows on number input
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .addButton {
+    background-color: var(--dark-purple);
+    color: white;
+    font-size: 12px;
+    margin: 0 auto;
+    width: 20%;
+  }
+}

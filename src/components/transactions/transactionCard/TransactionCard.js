@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { Card } from "react-bootstrap";
 import { getSvg } from "../../../service/getSvg";
 import { addCommasToNumber } from "../../../service/addCommasToNumber";
-export const TransactionCard = ({ tag, amount, date, title, type }) => {
+export const TransactionCard = ({ tag, amount, createdOn, title, type }) => {
   return (
     <Card className={styles.transactionCard}>
       <Card.Body>
@@ -31,7 +31,7 @@ export const TransactionCard = ({ tag, amount, date, title, type }) => {
                 {tag}
               </p>
               <p className={`text-capitalize ${styles.transactionTag}`}>
-                {date}
+                {createdOn}
               </p>
             </div>
           </div>

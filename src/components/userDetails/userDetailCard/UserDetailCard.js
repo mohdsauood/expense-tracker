@@ -53,6 +53,7 @@ export const UserDetailCard = ({ text, amount, iconColor, center }) => {
         <Card.Text
           className={`${styles.fontBold} ${styles.cardText} text-center`}
         >
+          {!!iconColor && (iconColor === "green" ? "+" : "-")}
           {addCommasToNumber(amount)} AED
         </Card.Text>
       </Card.Body>

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import Button from "react-bootstrap/Button";
 import { UserDetailCard } from "../userDetailCard/UserDetailCard";
+import { AddTransactionModal } from "../../addTransactionModal/index/AddTransactionModal";
 export const UserDetails = () => {
   const [userName, setUserName] = useState("sam");
   const [totalBalance, setTotalBalance] = useState("10003.07");
   const [totalIncome, setTotalIncome] = useState("14000");
   const [totalExpense, setTotalExpense] = useState("4003");
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
       <div className={styles.userdetailsDiv}>
@@ -36,12 +38,19 @@ export const UserDetails = () => {
                 center={false}
               />
             </div>
-            <Button className={styles.addTransactionButton}>
+            <Button
+              className={styles.addTransactionButton}
+              onClick={() => setModalShow(true)}
+            >
               Add Transaction
             </Button>
           </div>
         </div>
       </div>
+      <AddTransactionModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 };
