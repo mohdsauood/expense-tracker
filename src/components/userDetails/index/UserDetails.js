@@ -23,7 +23,9 @@ export const UserDetails = () => {
           <div
             className={`w-100 d-flex justify-content-between align-items-center mt-3`}
           >
-            <div className="d-flex justify-content-between w-50">
+            <div
+              className={`d-flex justify-content-between w-50 ${styles.expenseIncomeCardsDiv}`}
+            >
               <UserDetailCard
                 text="Total Income"
                 amount={income}

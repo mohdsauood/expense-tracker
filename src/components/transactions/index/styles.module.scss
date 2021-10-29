@@ -1,4 +1,11 @@
 .transactionsWrapper {
   padding: 0 4%;
+  margin: 0 auto;
   margin-bottom: 2rem;
+  max-width: 1200px;
+  @media (max-width: 530px) {
+    h5 {
+      font-size: 17px;
+    }
+  }
 }

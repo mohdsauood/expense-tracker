@@ -12,7 +12,7 @@
     }
   }
   .detailsDiv {
-    width: 60%;
+    width: 78%;
     .transactionTag {
       font-size: 13px;
       color: rgb(165, 158, 158);
@@ -22,6 +22,19 @@
     }
     .expenseText {
       color: green;
+    }
+  }
+}
+@media (max-width: 530px) {
+  .transactionCard {
+    width: 88%;
+    .detailsDiv {
+      .transactionTag {
+        font-size: 12px;
+      }
+      .transactionHeaderText {
+        font-size: 14px;
+      }
     }
   }
 }

@@ -15,12 +15,14 @@ export const TransactionCard = ({ tag, amount, createdOn, title, type }) => {
           </div>
           <div className={styles.detailsDiv}>
             <div className="d-flex justify-content-between align-items-center">
-              <p className="text-capitalize">{title}</p>{" "}
+              <p className={`text-capitalize ${styles.transactionHeaderText}`}>
+                {title}
+              </p>{" "}
               <p
                 className={
                   type === "income"
-                    ? `${styles.expenseText}`
-                    : `${styles.incomeText}`
+                    ? `${styles.expenseText} ${styles.transactionHeaderText}`
+                    : `${styles.incomeText} ${styles.transactionHeaderText}`
                 }
               >
                 {getAmountSign(type) + addCommasToNumber(amount) + " AED"}
