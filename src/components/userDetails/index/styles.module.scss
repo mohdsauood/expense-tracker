@@ -14,5 +14,12 @@
     border: 0;
     height: 21%;
     font-size: 16px;
+    border-color: none;
+  }
+  .addTransactionButton:hover {
+    background-color: #1d8370;
+  }
+  .addTransactionButton:focus {
+    box-shadow: none;
   }
 }

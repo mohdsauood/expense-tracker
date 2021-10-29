@@ -4,7 +4,6 @@ import { useAccount } from "../../../context/accountContext";
 export const Transactions = () => {
   const { state } = useAccount();
   const { transactions } = state;
-
   return (
     <>
       <div className={styles.transactionsWrapper}>

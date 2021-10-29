@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import { DatePickerField } from "../datepickerField/DatePickerField";
 import { useAccount } from "../../../context/accountContext";
 export const AddTransactionForm = ({ closeModal }) => {
-  const { state, dispatch } = useAccount();
+  const { dispatch } = useAccount();
   let schema = yup.object().shape({
     title: yup
       .string()
@@ -34,7 +34,6 @@ export const AddTransactionForm = ({ closeModal }) => {
       dispatch({ type: "incrementExpense", value: amount });
       dispatch({ type: "decrementBalance", value: amount });
     }
-    console.log("logging state", state);
   }
   return (
     <Formik

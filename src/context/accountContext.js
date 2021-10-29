@@ -31,7 +31,7 @@ function AccountReducer(state, action) {
       return { ...state, balance: state.balance - action.value };
     }
     case "addTransaction": {
-      return { ...state, transactions: [...state.transactions, action.value] };
+      return { ...state, transactions: [action.value, ...state.transactions] };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);

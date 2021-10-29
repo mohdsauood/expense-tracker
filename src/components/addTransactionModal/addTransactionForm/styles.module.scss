@@ -32,4 +32,10 @@
     margin: 0 auto;
     width: 20%;
   }
+  .addButton:hover {
+    background-color: var(--light-purple);
+  }
+  .addButton:focus {
+    box-shadow: none;
+  }
 }
