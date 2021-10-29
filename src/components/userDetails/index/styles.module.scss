@@ -16,6 +16,7 @@
   .fontBold {
     font-weight: bold;
   }
+
   .addTransactionButton {
     background-color: var(--turqoise);
     border: 0;
@@ -41,5 +42,20 @@
     .addTransactionButton {
       display: none;
     }
+  }
+}
+@media (max-width: 530px) {
+  .addTransactionMobileButton {
+    display: block;
+    position: fixed;
+    bottom: 8%;
+    right: 7%;
+    background-color: white;
+    z-index: 20;
+  }
+}
+@media (min-width: 531px) {
+  .addTransactionMobileButton {
+    display: none;
   }
 }

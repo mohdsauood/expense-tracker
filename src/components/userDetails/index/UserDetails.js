@@ -7,7 +7,7 @@ import { useAccount } from "../../../context/accountContext";
 export const UserDetails = () => {
   const { state } = useAccount();
   const { balance, income, expense } = state;
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
       <div className={styles.userdetailsDiv}>
@@ -52,6 +52,16 @@ export const UserDetails = () => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
+      <svg
+        onClick={() => setModalShow(true)}
+        className={styles.addTransactionMobileButton}
+        viewBox="107.428 109.552 50 50"
+        width="50"
+        height="50"
+        fill="rgb(58, 178, 156)"
+      >
+        <path d="M 132.428 109.552 C 118.622 109.552 107.428 120.745 107.428 134.552 C 107.428 148.359 118.622 159.552 132.428 159.552 C 146.234 159.552 157.428 148.359 157.428 134.552 C 157.428 120.745 146.234 109.552 132.428 109.552 Z M 144.927 136.636 L 134.51 136.636 L 134.51 147.052 L 130.346 147.052 L 130.346 136.636 L 119.929 136.636 L 119.929 132.468 L 130.346 132.468 L 130.346 122.052 L 134.51 122.052 L 134.51 132.468 L 144.927 132.468 L 144.927 136.636 Z"></path>
+      </svg>
     </>
   );
 };

@@ -33,7 +33,7 @@ export const TransactionCard = ({ tag, amount, createdOn, title, type }) => {
                 {tag}
               </p>
               <p className={`text-capitalize ${styles.transactionTag}`}>
-                {String(createdOn).substring(0, 12)}
+                {String(createdOn).substring(0, 16)}
               </p>
             </div>
           </div>
